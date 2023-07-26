@@ -1,14 +1,19 @@
 import './App.css'
+import { Routes, BrowserRouter, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 
-function App() {
-
+function App () {
   return (
-    <>
-      <div>
-        <h1>Test</h1>
-      </div>
-      
-    </>
+    <BrowserRouter>
+      <Routes>
+
+        <Route path='/' element={<Home />} />
+
+        <Route path='*' element={<NotFound />} />
+
+      </Routes>
+    </BrowserRouter>
   )
 }
 
