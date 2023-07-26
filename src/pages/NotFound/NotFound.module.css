@@ -1,0 +1,20 @@
+.notFound {
+  margin: auto;
+  width: 350px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.text {
+  word-wrap: break-word;
+  font-family: Starjedi;
+  margin-bottom: 5px;
+}
