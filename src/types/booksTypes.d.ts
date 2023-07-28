@@ -17,3 +17,12 @@ type Author = string
 type Character = string
 
 type povCharacter = string
+
+interface BooksState {
+  allBooks: Book[]
+  copyBooks: Book[]
+}
+
+export interface BooksProps {
+  books: BooksState
+}
