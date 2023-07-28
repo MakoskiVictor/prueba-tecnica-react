@@ -1,33 +1,13 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addBooks } from '../../redux/booksSlice'
-import { Book } from '../../types/booksTypes.d'
+import { Book, BooksProps } from '../../types/booksTypes.d'
 import { getBooks } from '../../utils/Fetchs/getBooks'
-
-interface BooksProps {
-  url: string
-  name: string
-  isbn: string
-  authors: string
-  numberOfPages: number
-  publisher: string
-  country: string
-  mediaType: string
-  released: string
-}
-
-interface BooksState {
-  allBooks: BooksProps[]
-  copyBooks: BooksProps[]
-}
-
-interface Props {
-  books: BooksState
-}
+import { Table } from '../../components/Table'
 
 export default function Home (): React.ReactNode {
   const dispatch = useDispatch()
-  const books = useSelector((state: Props) => state.books.allBooks)
+  const books = useSelector((state: BooksProps) => state.books.allBooks)
   useEffect(() => {
     if (books.length === 0) {
       const fetchData = (): void => {
@@ -40,12 +20,11 @@ export default function Home (): React.ReactNode {
     }
   }, [])
 
-  console.log(books)
   return (
     <div>
       Home
 
-      {books.length > 0 && JSON.stringify(books)}
+      <Table props={books} />
 
     </div>
   )
