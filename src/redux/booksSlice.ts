@@ -1,21 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-interface BooksProps {
-  url: string
-  name: string
-  isbn: string
-  authors: string
-  numberOfPages: number
-  publisher: string
-  country: string
-  mediaType: string
-  released: string
-}
-
-interface BooksState {
-  allBooks: BooksProps[]
-  copyBooks: BooksProps[]
-}
+import { BooksState } from '../types/booksTypes'
 
 const initialState: BooksState = {
   allBooks: [],
